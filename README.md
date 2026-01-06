@@ -1,5 +1,6 @@
 # Pixel Perfect Joy
 Dashboard Summary
+Live Demo : https://pixelperfextjoy-satyam-guptas-projects-3bdb6075.vercel.app
 
 Overview: A polished, data-driven control center that surfaces the most important metrics at a glance.
 KPIs: KPICards present real-time, actionable metrics for revenue, user engagement, and growth.
