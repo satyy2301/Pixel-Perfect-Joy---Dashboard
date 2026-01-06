@@ -1,4 +1,12 @@
 # Pixel Perfect Joy
+Dashboard Summary
+
+Overview: A polished, data-driven control center that surfaces the most important metrics at a glance.
+KPIs: KPICards present real-time, actionable metrics for revenue, user engagement, and growth.
+Visual Analytics: Multi-dimensional charts (BubbleChart, PlatformValueChart, RevenueCard) reveal trends, outliers, and correlations.
+Platform Insights: PlatformDistribution and PlatformTable break down performance by channel for fast allocation decisions.
+Sales Intelligence: SalesDynamic and SalesLeaderboard highlight momentum and top-performing segments for revenue optimization.
+UX & Delivery: Responsive, accessible UI built with React + TypeScript and shadcn-ui primitives for rapid, production-ready decision-making.
 
 Lightweight React + TypeScript starter built with Vite, Tailwind CSS, and shadcn-ui components.
 
