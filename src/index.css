@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 220 20% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 14%;
+
+    --primary: 4 74% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 25% 94%;
+    --secondary-foreground: 220 20% 14%;
+
+    --muted: 40 20% 96%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 40 25% 94%;
+    --accent-foreground: 220 20% 14%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 60% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 40 20% 90%;
+    --input: 40 20% 90%;
+    --ring: 4 74% 60%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 40 33% 98%;
+    --sidebar-foreground: 220 10% 40%;
+    --sidebar-primary: 4 74% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 25% 94%;
+    --sidebar-accent-foreground: 220 20% 14%;
+    --sidebar-border: 40 20% 92%;
+    --sidebar-ring: 4 74% 60%;
+
+    /* Custom dashboard tokens */
+    --chart-coral: 4 74% 60%;
+    --chart-gray: 220 10% 75%;
+    --chart-green: 142 60% 45%;
+    --badge-green-bg: 142 60% 92%;
+    --badge-green-text: 142 60% 30%;
+    --badge-coral-bg: 4 74% 92%;
+    --badge-coral-text: 4 74% 45%;
+    --badge-yellow-bg: 45 93% 90%;
+    --badge-yellow-text: 45 93% 30%;
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 40 20% 96%;
+
+    --card: 220 20% 14%;
+    --card-foreground: 40 20% 96%;
+
+    --popover: 220 20% 14%;
+    --popover-foreground: 40 20% 96%;
+
+    --primary: 4 74% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 40 20% 96%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 220 15% 20%;
+    --accent-foreground: 40 20% 96%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 4 74% 60%;
+    
+    --sidebar-background: 220 20% 10%;
+    --sidebar-foreground: 220 10% 70%;
+    --sidebar-primary: 4 74% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 18%;
+    --sidebar-accent-foreground: 40 20% 96%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 4 74% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .dashboard-card {
+    @apply bg-card rounded-xl border border-border/50 shadow-sm;
+  }
+
+  .metric-badge-green {
+    @apply inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium;
+    background-color: hsl(var(--badge-green-bg));
+    color: hsl(var(--badge-green-text));
+  }
+
+  .metric-badge-coral {
+    @apply inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium;
+    background-color: hsl(var(--badge-coral-bg));
+    color: hsl(var(--badge-coral-text));
+  }
+
+  .metric-badge-yellow {
+    @apply inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium;
+    background-color: hsl(var(--badge-yellow-bg));
+    color: hsl(var(--badge-yellow-text));
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-colors cursor-pointer;
+  }
+
+  .nav-item-active {
+    @apply bg-primary/10 text-primary;
+  }
+
+  .kpi-card {
+    @apply dashboard-card p-4 flex flex-col gap-1;
+  }
+
+  .chart-bar {
+    @apply rounded-t transition-all duration-300;
+    background-color: hsl(var(--chart-gray));
+  }
+
+  .chart-bar-active {
+    background-color: hsl(var(--chart-coral));
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--border));
+    border-radius: 3px;
+  }
+}
